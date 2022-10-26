@@ -776,6 +776,14 @@ video {
     padding-top: 4rem;
   }
 
+  .smx\:pt-20 {
+    padding-top: 5rem;
+  }
+
+  .smx\:pt-24 {
+    padding-top: 6rem;
+  }
+
   .smx\:text-center {
     text-align: center;
   }
