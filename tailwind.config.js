@@ -14,8 +14,9 @@ module.exports = {
       }
     },
     screens: {
+      'lg': '1024px',
       'xsm': {'max': '383px'},
-      'smx': {'max': '530px'}
+      'smx': {'max': '720px'}
     }
   },
   plugins: [],
