@@ -32,7 +32,7 @@
                 <!-- hamburger menu -->
                 <div class="lg:hidden">
                     
-                    <button onclick="toggleMenu()" class="hover:opacity-60 transition-all duration-300">
+                    <button onclick="toggleMenu(true)" class="hover:opacity-60 transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" width="42" height="18" viewBox="0 0 42 18">
                             <g id="hamburger-menu" transform="translate(-62 -34)">
                             <rect id="_3" data-name="3" width="33" height="4" rx="2" transform="translate(71 34)" fill="#3d3d3d"/>
@@ -426,8 +426,14 @@
             }, 150)
         }
 
-        function toggleMenu(){
-            container_menu.classList.toggle("hidden")
+        function toggleMenu(cond){
+            if(!cond){
+                setTimeout(function(){
+                    container_menu.classList.toggle("hidden")
+                }, 400)
+            }else{
+                container_menu.classList.toggle("hidden")
+            }
             list_menu.classList.toggle("hidden")
             setTimeout(function(){
                 container_menu.classList.toggle("translate-x-[88rem]")
