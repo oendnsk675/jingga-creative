@@ -19,7 +19,7 @@
     
                 <!-- logo -->
                 <div>
-                    <img src="./dist/image/Logo Jingga 1.png" alt="" class="w-32">
+                    <img src="./dist/image/Logo Jingga 1.png" alt="" class="w-32 smx:w-24">
                 </div>
                 <!-- logo -->
     
@@ -108,9 +108,9 @@
     </div>
 
 
-    <div id="container-menu-detail" class="hidden">
+    <div id="container-menu-detail">
         <!-- menu detail about -->
-        <div id="about-content" class="absolute translate-x-[88rem] top-0 left-0 transform transition-all duration-300 pt-8 bg-rusty-red h-screen w-full z-50 overflow-y-auto">
+        <div id="about-content" class="absolute hidden translate-x-[88rem] top-0 left-0 transform transition-all duration-300 pt-8 bg-rusty-red h-screen w-full z-50 overflow-y-auto">
             
     
                 <!-- close -->
@@ -171,7 +171,7 @@
         <!-- menu detail about -->
     
         <!-- menu our works -->
-        <div id="work-content" class="absolute top-0 translate-x-[88rem] left-0 transform transition-all duration-300  pt-8  bg-rusty-red h-screen w-full z-50 overflow-y-auto">
+        <div id="work-content" class="absolute hidden top-0 translate-x-[88rem] left-0 transform transition-all duration-300  pt-8  bg-rusty-red h-screen w-full z-50 overflow-y-auto">
                 <!-- close -->
                 <div class="px-12 smx:px-4">
                     <button onclick="closeMenuDetail('work')" class="p-2 px-3 border-2 border-white w-fit flex justify-center items-center hover:opacity-60 duration-300 transition-all rounded-xl mb-14">
@@ -230,7 +230,7 @@
         <!-- menu our works -->
     
         <!-- menu contact -->
-        <div id="contact-content" class="absolute top-0 translate-x-[88rem] left-0 transform transition-all duration-300 pt-8  bg-rusty-red w-full h-full z-50 overflow-y-auto">
+        <div id="contact-content" class="absolute hidden top-0 translate-x-[88rem] left-0 transform transition-all duration-300 pt-8  bg-rusty-red w-full h-full z-50 overflow-y-auto">
                 <!-- close -->
                 <div class="px-12 smx:px-4">
                     <button onclick="closeMenuDetail('contact')" class="p-2 px-3 border-2 border-white w-fit flex justify-center items-center hover:opacity-60 duration-300 transition-all rounded-xl mb-14">
@@ -284,18 +284,18 @@
                                 <!-- name and email -->
                                 <div class="flex gap-3 mb-7">
     
-                                    <input type="text" class="bg-transparent  w-[45%] focus:outline-none text-2xl p-2 border-b-2 border-b-slate-600 focus:border-b-rusty-red transition-all duration-200" placeholder="Your Name *" required>
+                                    <input type="text" class="bg-transparent w-full focus:outline-none text-2xl p-2 border-b-2 border-b-slate-600 focus:border-b-rusty-red transition-all duration-200" placeholder="Your Name *" required>
     
-                                    <input type="email" class="bg-transparent  w-[45%] focus:outline-none text-2xl p-2 border-b-2 border-b-slate-600 focus:border-b-rusty-red transition-all duration-200" placeholder="Email *" required>
+                                    <input type="email" class="bg-transparent w-full focus:outline-none text-2xl p-2 border-b-2 border-b-slate-600 focus:border-b-rusty-red transition-all duration-200" placeholder="Email *" required>
                                     
                                 </div>
                                 <!-- name and email -->
                                 <!-- name and email -->
                                 <div class="flex gap-3 mb-4">
     
-                                    <input type="text" class="bg-transparent  w-[45%] focus:outline-none text-2xl p-2 border-b-2 border-b-slate-600 focus:border-b-rusty-red transition-all duration-200" placeholder="Company Name *" required>
+                                    <input type="text" class="bg-transparent w-full focus:outline-none text-2xl p-2 border-b-2 border-b-slate-600 focus:border-b-rusty-red transition-all duration-200" placeholder="Company Name *" required>
     
-                                    <input type="text" class="bg-transparent  w-[45%] focus:outline-none text-2xl p-2 border-b-2 border-b-slate-600 focus:border-b-rusty-red transition-all duration-200" placeholder="Phone Number *" required>
+                                    <input type="text" class="bg-transparent w-full focus:outline-none text-2xl p-2 border-b-2 border-b-slate-600 focus:border-b-rusty-red transition-all duration-200" placeholder="Phone Number *" required>
                                     
                                 </div>
                                 <!-- name and email -->
@@ -363,8 +363,6 @@
                     
                 </div>
     
-                
-            
         </div>
         <!-- menu contact -->
     </div>
@@ -387,7 +385,7 @@
         let list_menu = document.getElementById("list-menu");
 
         about.addEventListener("click", function(){
-            container_menu_detail.classList.toggle("hidden")
+            about_content.classList.remove("hidden")
             container.classList.add("scale-90")
             setTimeout(function(){
                 about_content.classList.toggle("translate-x-[88rem]")
@@ -395,7 +393,7 @@
         })
 
         work.addEventListener("click", function(){
-            container_menu_detail.classList.toggle("hidden")
+            work_content.classList.remove("hidden")
             container.classList.add("scale-90")
             setTimeout(function(){
                 work_content.classList.toggle("translate-x-[88rem]")
@@ -403,7 +401,7 @@
         })
 
         contact.addEventListener("click", function(){
-            container_menu_detail.classList.toggle("hidden")
+            contact_content.classList.remove("hidden")
             container.classList.add("scale-90")
             setTimeout(function(){
                 contact_content.classList.toggle("translate-x-[88rem]")

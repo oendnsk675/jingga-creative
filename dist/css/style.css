@@ -1028,6 +1028,10 @@ video {
     width: 100%;
   }
 
+  .smx\:w-24 {
+    width: 6rem;
+  }
+
   .smx\:flex-col {
     flex-direction: column;
   }
