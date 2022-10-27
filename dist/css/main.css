@@ -1939,18 +1939,29 @@ form .inputs-description {
   .intro__headline {
     padding: 12rem 5rem;
   }
+
+  .vektor {
+    display: none;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .vektor {
+    display: none;
+  }
 }
 @media only screen and (min-width: 1200px) {
   .intro__headline {
-    position: absolute;
+    /* position: absolute; */
+    min-width: 45% !important;
+    margin-top: 25rem;
     left: 0;
     top: 50%;
     bottom: auto;
     -webkit-transform: translateY(-50%);
-       -moz-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
-    width: 100%;
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    /* width: 100%; */
     padding: 0 5rem;
   }
 }
