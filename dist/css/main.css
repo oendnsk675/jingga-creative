@@ -1939,10 +1939,6 @@ form .inputs-description {
   .intro__headline {
     padding: 12rem 5rem;
   }
-
-  .vektor {
-    display: none;
-  }
 }
 @media only screen and (max-width: 768px) {
   .vektor {
