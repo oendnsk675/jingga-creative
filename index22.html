@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./dist/css/style.css">
+    <link rel="stylesheet" href="./dist/css/custom.css">
+</head>
+<body class="overflow-hidden h-screen bg-slate-300">
+    
+    <div id="container" class="overflow-hidden h-screen bg-white transition-all duration-300">
+        <header>
+            <nav class="flex items-center justify-between px-16 smx:px-4 p-3">
+    
+                <!-- logo -->
+                <div>
+                    <img src="./dist/image/Logo Jingga 1.png" alt="" class="w-32 smx:w-24">
+                </div>
+                <!-- logo -->
+    
+                <div class="flex gap-6 items-center font-semibold text-lg smx:hidden">
+                    <button id="about" class="hover:opacity-40 trasition-all duration-300">About Us</button>
+                    <button id="our-works" class="hover:opacity-40 trasition-all duration-300">Our Works</button>
+                    <button id="contact" class="hover:opacity-40 trasition-all duration-300">Contact</button>
+                </div>
+                
+                <!-- hamburger menu -->
+                <div class="lg:hidden">
+                    
+                    <button onclick="toggleMenu(true)" class="hover:opacity-60 transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="42" height="18" viewBox="0 0 42 18">
+                            <g id="hamburger-menu" transform="translate(-62 -34)">
+                            <rect id="_3" data-name="3" width="33" height="4" rx="2" transform="translate(71 34)" fill="#3d3d3d"/>
+                            <rect id="_2" data-name="2" width="33" height="4" rx="2" transform="translate(71 41)" fill="#3d3d3d"/>
+                            <rect id="_1" data-name="1" width="42" height="4" rx="2" transform="translate(62 48)" fill="#3d3d3d"/>
+                            </g>
+                        </svg>
+                    </button>
+                
+                </div>
+                <!-- hamburger menu -->
+            </nav>
+
+            
+        </header>
+    
+        <main class="px-16 smx:px-4 overflow-hidden">
+    
+            <!-- hero -->
+            <div class="flex justify-between pt-10 smx:pt-24 items-center">
+                
+                <!-- text-headline -->
+                <div class="w-[45%] smx:w-full smx:flex smx:flex-col smx:items-center">
+                    <h1 class="text-6xl font-bold mb-10 smx:text-center">We Are Comming Very Soon!</h1>
+    
+                    <p class="font-semibold mb-16 smx:text-center text-lg">we are preparing something amazing and exciting for your, a special surprise for our subscribers only.</p>
+    
+                    <a href="https://www.instagram.com/jingga_digital_creative/" target="_blank" class="rounded-3xl flex justify-center items-center gap-4 bg-rusty-red w-fit p-2 px-6 text-white font-semibold hover:opacity-70 transition-all duration-300">
+                        <span>Connect With Us</span>
+                        <img src="./dist/image/1x/divide.png" alt="">
+                        <img src="./dist/image/1x/Asset 2.png" alt="">
+                    </a>
+                </div>
+                <!-- text-headline -->
+    
+                <!-- illustration -->
+                <div class="w-[45%] smx:hidden">
+                    <img src="./dist/image/vektor.png" alt="" class="w-[85%]">
+                </div>
+                <!-- illustration -->
+                
+            </div>
+            <!-- hero -->
+
+        </main>
+    </div>
+
+    <div id="container-menu" class="hidden absolute top-0 left-0 transform translate-x-[88rem] w-full transition-all duration-300 h-screen bg-slate-600 p-4 z-40">
+
+        <!-- close -->
+        <button onclick="toggleMenu()" class="w-full flex justify-end p-6">
+            <svg class="fill-white bg-opacity-75" xmlns="http://www.w3.org/2000/svg" width="27.913" height="27.283" viewBox="0 0 27.913 27.283"><g transform="translate(-119.596 -28.748)"><g transform="translate(123.82 29.079) rotate(43)" fill="white" stroke="white" stroke-width="1"><rect width="32.391" height="6.193" rx="3.097" stroke="none"/><rect x="0.5" y="0.5" width="31.391" height="5.193" rx="2.597" fill="none"/></g><g transform="translate(147.194 33.127) rotate(135)" fill="white" stroke="white" stroke-width="1"><rect width="32.391" height="6.193" rx="3.097" stroke="none"/><rect x="0.5" y="0.5" width="31.391" height="5.193" rx="2.597" fill="none"/></g></g></svg>
+        </button>
+        <!-- close -->
+
+        <!-- list menu -->
+        <div id="list-menu" class="hidden flex flex-col transition-all duration-500 justify-center gap-8 mt-24 translate-y-[88rem] opacity-0 ease-in-out">
+            <button onclick="toggleMenu()" class="text-4xl font-semibold text-white hover:opacity-50 duration-300 transition-all">
+                Home
+            </button>
+            <button onclick="toggleMenuDetail('about', true)" id="about" class="text-4xl font-semibold text-white hover:opacity-50 duration-300 transition-all">
+                About Us
+            </button>
+            <button onclick="toggleMenuDetail('work', true)" class="text-4xl font-semibold text-white hover:opacity-50 duration-300 transition-all">
+                Our Works
+            </button>
+            <button onclick="toggleMenuDetail('contact', true)" class="text-4xl font-semibold text-white hover:opacity-50 duration-300 transition-all">
+                Contact
+            </button>
+        </div>
+        <!-- list menu -->
+        
+    </div>
+
+
+    <div id="container-menu-detail">
+        <!-- menu detail about -->
+        <div id="about-content" class="absolute hidden translate-x-[88rem] top-0 left-0 transform transition-all duration-300 pt-8 bg-rusty-red h-screen w-full z-50 overflow-y-auto">
+            
+    
+                <!-- close -->
+                <div class="px-12 smx:px-4 ">
+                    <button onclick="closeMenuDetail('about')" class="p-2 px-3 border-2 border-white w-fit flex justify-center items-center hover:opacity-60 duration-300 transition-all rounded-xl mb-14">
+                        
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 26.234 37.524">
+                            <g id="Group_1" data-name="Group 1" transform="translate(-141.029 -29.925)">
+                            <g id="Rectangle_2" data-name="Rectangle 2" transform="matrix(0.766, -0.643, 0.643, 0.766, 141.075, 47.35)" fill="white" stroke="white" stroke-width="1">
+                                <rect width="23" height="8.434" rx="4.217" stroke="none"/>
+                                <rect x="0.5" y="0.5" width="22" height="7.434" rx="3.717" fill="none"/>
+                            </g>
+                            <g id="Rectangle_3" data-name="Rectangle 3" transform="translate(146.781 42.793) rotate(43)" fill="white" stroke="white" stroke-width="1">
+                                <rect width="23" height="8.434" rx="4.217" stroke="none"/>
+                                <rect x="0.5" y="0.5" width="22" height="7.434" rx="3.717" fill="none"/>
+                            </g>
+                            </g>
+                        </svg>
+          
+                    </button>
+                </div>
+                <!-- close -->
+    
+    
+                <!-- heading -->
+                <div class="w-fit mb-10 px-12 smx:px-4">
+                    <h1  class="text-7xl font-bold text-white mb-3">
+                        About Us
+                    </h1>
+                    
+                    <div class="w-full h-1.5 bg-white">
+                    </div>
+                    
+                </div>
+                <!-- heading -->
+    
+                <!-- desc -->
+                <p class="text-lg font-semibold text-white mb-14 px-12 smx:px-4">
+                    I  wonder if I've been changed in the night? Let me think. Was I the same when I got up this morning? I almost think I can remember feeling a little different. But if I'm not the same, the next question is 'Who in the world am I?' Ah, that's the great puzzle!
+                </p>
+                <!-- desc -->
+    
+                <!-- card -->
+                <div class="flex flex-wrap">
+    
+                    <div class="w-1/2 h-72 bg-slate-600"></div>
+                    <div class="w-1/2 h-72 bg-slate-200"></div>
+                    <div class="w-1/2 h-72 bg-slate-200"></div>
+                    <div class="w-1/2 h-72 bg-slate-600"></div>
+                    <div class="w-full h-72 bg-gray-500">
+                        
+                    </div>
+                    
+                </div>
+                <!-- card -->
+            
+        </div>
+        <!-- menu detail about -->
+    
+        <!-- menu our works -->
+        <div id="work-content" class="absolute hidden top-0 translate-x-[88rem] left-0 transform transition-all duration-300  pt-8  bg-rusty-red h-screen w-full z-50 overflow-y-auto">
+                <!-- close -->
+                <div class="px-12 smx:px-4">
+                    <button onclick="closeMenuDetail('work')" class="p-2 px-3 border-2 border-white w-fit flex justify-center items-center hover:opacity-60 duration-300 transition-all rounded-xl mb-14">
+                        
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 26.234 37.524">
+                            <g id="Group_1" data-name="Group 1" transform="translate(-141.029 -29.925)">
+                            <g id="Rectangle_2" data-name="Rectangle 2" transform="matrix(0.766, -0.643, 0.643, 0.766, 141.075, 47.35)" fill="white" stroke="white" stroke-width="1">
+                                <rect width="23" height="8.434" rx="4.217" stroke="none"/>
+                                <rect x="0.5" y="0.5" width="22" height="7.434" rx="3.717" fill="none"/>
+                            </g>
+                            <g id="Rectangle_3" data-name="Rectangle 3" transform="translate(146.781 42.793) rotate(43)" fill="white" stroke="white" stroke-width="1">
+                                <rect width="23" height="8.434" rx="4.217" stroke="none"/>
+                                <rect x="0.5" y="0.5" width="22" height="7.434" rx="3.717" fill="none"/>
+                            </g>
+                            </g>
+                        </svg>
+        
+                    </button>
+                </div>
+                <!-- close -->
+    
+    
+                <!-- heading -->
+                <div class="w-fit mb-10 px-12 smx:px-4">
+                    <h1 class="text-7xl font-bold text-white mb-3">
+                        Our Works
+                    </h1>
+                    
+                    <div class="w-full h-1.5 bg-white">
+                    </div>
+                    
+                </div>
+                <!-- heading -->
+    
+                <!-- desc -->
+                <p class="text-lg font-semibold text-white mb-14 px-12 smx:px-4">
+                    Be what you would seem to be – or, if you’d like it put more simply – never imagine yourself not to be otherwise than what it might appear to others that what you were or might have been was not otherwise than what you had been would have appeared to them to be otherwise.
+                </p>
+                <!-- desc -->
+    
+                <!-- card -->
+                <div class="flex flex-wrap">
+    
+                    <div class="w-1/2 h-72 bg-slate-600"></div>
+                    <div class="w-1/2 h-72 bg-slate-200"></div>
+                    <div class="w-1/2 h-72 bg-slate-200"></div>
+                    <div class="w-1/2 h-72 bg-slate-600"></div>
+                    <div class="w-full h-72 bg-gray-500">
+                        
+                    </div>
+                    
+                </div>
+                <!-- card -->
+            
+        </div>
+        <!-- menu our works -->
+    
+        <!-- menu contact -->
+        <div id="contact-content" class="absolute hidden top-0 translate-x-[88rem] left-0 transform transition-all duration-300 pt-8  bg-rusty-red w-full h-full z-50 overflow-y-auto">
+                <!-- close -->
+                <div class="px-12 smx:px-4">
+                    <button onclick="closeMenuDetail('contact')" class="p-2 px-3 border-2 border-white w-fit flex justify-center items-center hover:opacity-60 duration-300 transition-all rounded-xl mb-14">
+                        
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 26.234 37.524">
+                            <g id="Group_1" data-name="Group 1" transform="translate(-141.029 -29.925)">
+                            <g id="Rectangle_2" data-name="Rectangle 2" transform="matrix(0.766, -0.643, 0.643, 0.766, 141.075, 47.35)" fill="white" stroke="white" stroke-width="1">
+                                <rect width="23" height="8.434" rx="4.217" stroke="none"/>
+                                <rect x="0.5" y="0.5" width="22" height="7.434" rx="3.717" fill="none"/>
+                            </g>
+                            <g id="Rectangle_3" data-name="Rectangle 3" transform="translate(146.781 42.793) rotate(43)" fill="white" stroke="white" stroke-width="1">
+                                <rect width="23" height="8.434" rx="4.217" stroke="none"/>
+                                <rect x="0.5" y="0.5" width="22" height="7.434" rx="3.717" fill="none"/>
+                            </g>
+                            </g>
+                        </svg>
+    
+                    </button>
+                </div>
+                <!-- close -->
+    
+    
+                <!-- heading -->
+                <div class="w-fit mb-10 px-12 smx:px-4 mt-10">
+                    <h1 class="text-7xl font-bold text-white mb-3">
+                        Get in touch
+                    </h1>
+                    
+                    <div class="w-full h-1.5 bg-white">
+                    </div>
+                    
+                </div>
+                <!-- heading -->
+    
+                <!-- desc -->
+                <p class="text-lg font-semibold text-slate-50 mb-14 px-12 smx:px-4">
+                    You can call us or leave a request here. We are always glad to see you in our office from 9:00 to 18:00. Contact us via phone: +1 212-708-9400 or email: example@example.com
+                </p>
+                <!-- desc -->
+    
+                <div class="pt-14 bg-slate-100 pb-10">
+    
+                    <!-- card -->
+                    <div class="flex px-12 smx:flex-col-reverse gap-y-14 justify-between items-center smx:px-4">
+    
+                        <!-- form email -->
+                        <div class="w-[47%] smx:w-full">
+    
+                            <form action="">
+    
+                                <!-- name and email -->
+                                <div class="flex gap-3 mb-7">
+    
+                                    <input type="text" class="bg-transparent w-full focus:outline-none text-2xl p-2 border-b-2 border-b-slate-600 focus:border-b-rusty-red transition-all duration-200" placeholder="Your Name *" required>
+    
+                                    <input type="email" class="bg-transparent w-full focus:outline-none text-2xl p-2 border-b-2 border-b-slate-600 focus:border-b-rusty-red transition-all duration-200" placeholder="Email *" required>
+                                    
+                                </div>
+                                <!-- name and email -->
+                                <!-- name and email -->
+                                <div class="flex gap-3 mb-4">
+    
+                                    <input type="text" class="bg-transparent w-full focus:outline-none text-2xl p-2 border-b-2 border-b-slate-600 focus:border-b-rusty-red transition-all duration-200" placeholder="Company Name *" required>
+    
+                                    <input type="text" class="bg-transparent w-full focus:outline-none text-2xl p-2 border-b-2 border-b-slate-600 focus:border-b-rusty-red transition-all duration-200" placeholder="Phone Number *" required>
+                                    
+                                </div>
+                                <!-- name and email -->
+    
+                                <div>
+                                    <textarea name="" id="" class="w-full bg-transparent focus:outline-none text-2xl p-2 border-b-2 border-b-slate-600 focus:border-b-rusty-red transition-all duration-200" rows="7"></textarea>
+                                </div>
+    
+                                <button type="submit" class="p-3 px-6 bg-rusty-red rounded-xl font-semibold text-lg text-white mt-5">Send</button>
+                                
+                            </form>
+                            
+                        </div>
+                        <!-- form email -->
+    
+                        <div class="h-96 flex flex-col gap-y-5 items-center smx:hidden">
+                            <div class="h-[45%] w-1 bg-slate-600"></div>
+                            <span class="text-lg font-semibold">Or</span>
+                            <div class="h-[45%] w-1 bg-slate-600"></div>
+                        </div>
+    
+                        <!-- sosmed -->
+                        <div class="w-[40%] smx:w-full flex flex-col gap-y-5">
+    
+                            <!-- ig -->
+                            <a href="" target="_blank" class="hover:opacity-60 transition-all duration-300 flex items-center gap-6">
+                                <div class="w-12 h-12 rounded-lg bg-rusty-red"></div>
+                                <p class="text-lg font-semibold">Instagram</p>
+                            </a>
+                            <!-- ig -->
+    
+                            <!-- dribble -->
+                            <a href="" target="_blank" class="hover:opacity-60 transition-all duration-300 flex items-center gap-6">
+                                <div class="w-12 h-12 rounded-lg bg-rusty-red"></div>
+                                <p class="text-lg font-semibold">Dribble</p>
+                            </a>
+                            <!-- dribble -->
+    
+                            <!-- behance -->
+                            <a href="" target="_blank" class="hover:opacity-60 transition-all duration-300 flex items-center gap-6">
+                                <div class="w-12 h-12 rounded-lg bg-rusty-red"></div>
+                                <p class="text-lg font-semibold">Behance</p>
+                            </a>
+                            <!-- behance -->
+    
+                            <!-- fb -->
+                            <a href="" target="_blank" class="hover:opacity-60 transition-all duration-300 flex items-center gap-6">
+                                <div class="w-12 h-12 rounded-lg bg-rusty-red"></div>
+                                <p class="text-lg font-semibold">Facebook</p>
+                            </a>
+                            <!-- fb -->
+    
+                            <!-- twitter -->
+                            <a href="" target="_blank" class="hover:opacity-60 transition-all duration-300 flex items-center gap-6">
+                                <div class="w-12 h-12 rounded-lg bg-rusty-red"></div>
+                                <p class="text-lg font-semibold">Twitter</p>
+                            </a>
+                            <!-- twitter -->
+                            
+                        </div>
+                        <!-- sosmed -->
+                        
+                    </div>
+                    <!-- card -->
+                    
+                </div>
+    
+        </div>
+        <!-- menu contact -->
+    </div>
+    
+
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/solid.js" integrity="sha384-/BxOvRagtVDn9dJ+JGCtcofNXgQO/CCCVKdMfL115s3gOgQxWaX/tSq5V8dRgsbc" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/fontawesome.js" integrity="sha384-dPBGbj4Uoy1OOpM4+aRGfAOc0W37JkROT+3uynUgTHZCHZNMHfGXsmmvYTffZjYO" crossorigin="anonymous"></script>
+    
+    <script>
+
+        let about = document.getElementById("about");
+        let work = document.getElementById("our-works");
+        let contact = document.getElementById("contact");
+        let about_content = document.getElementById("about-content");
+        let work_content = document.getElementById("work-content");
+        let contact_content = document.getElementById("contact-content");
+        let container = document.getElementById("container");
+        let container_menu_detail = document.getElementById("container-menu-detail");
+        let container_menu = document.getElementById("container-menu");
+        let list_menu = document.getElementById("list-menu");
+
+        about.addEventListener("click", function(){
+            about_content.classList.remove("hidden")
+            container.classList.add("scale-90")
+            setTimeout(function(){
+                about_content.classList.toggle("translate-x-[88rem]")
+            }, 200)
+        })
+
+        work.addEventListener("click", function(){
+            work_content.classList.remove("hidden")
+            container.classList.add("scale-90")
+            setTimeout(function(){
+                work_content.classList.toggle("translate-x-[88rem]")
+            }, 200)
+        })
+
+        contact.addEventListener("click", function(){
+            contact_content.classList.remove("hidden")
+            container.classList.add("scale-90")
+            setTimeout(function(){
+                contact_content.classList.toggle("translate-x-[88rem]")
+            }, 200)
+        })
+
+        function closeMenuDetail(menu) {
+            setTimeout(function(){
+                container_menu_detail.classList.toggle("hidden")
+            }, 400)
+            if(menu == "about"){
+                about_content.classList.toggle("translate-x-[88rem]")
+            }else if(menu == "work"){
+                work_content.classList.toggle("translate-x-[88rem]")
+            }else if(menu == "contact"){
+                contact_content.classList.toggle("translate-x-[88rem]")
+            }
+            setTimeout(function(){
+                container.classList.remove("scale-90")
+            }, 150)
+        }
+
+        function toggleMenu(cond){
+            if(!cond){
+                setTimeout(function(){
+                    container_menu.classList.toggle("hidden")
+                }, 400)
+            }else{
+                container_menu.classList.toggle("hidden")
+            }
+            list_menu.classList.toggle("hidden")
+            setTimeout(function(){
+                container_menu.classList.toggle("translate-x-[88rem]")
+            }, 100)
+
+            setTimeout(function(){
+                list_menu.classList.toggle("translate-y-[88rem]")
+            }, 400)
+
+            setTimeout(function(){
+                list_menu.classList.toggle("opacity-0")
+            }, 350)
+        }
+
+        function toggleMenuDetail(menu, cond){
+            container_menu_detail.classList.toggle("hidden")
+            if(menu == "about"){
+                if(cond){
+                    setTimeout(function(){
+                        about_content.classList.toggle("translate-x-[88rem]")
+                    }, 100)
+                }else{
+                    about_content.classList.toggle("translate-x-[88rem]")
+                }
+            }else if(menu == "work"){
+                if(cond){
+                    setTimeout(function(){
+                        work_content.classList.toggle("translate-x-[88rem]")
+                    }, 100)
+                }else{
+                    work_content.classList.toggle("translate-x-[88rem]")
+                }
+            }else if(menu == "contact"){
+                if(cond){
+                    setTimeout(function(){
+                        contact_content.classList.toggle("translate-x-[88rem]")
+                    }, 100)
+                }else{
+                    contact_content.classList.toggle("translate-x-[88rem]")
+                }
+            }
+        }
+        
+    </script>
+</body>
+</html>
